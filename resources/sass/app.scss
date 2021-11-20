@@ -1,0 +1,86 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.bg-red{
+    //background-color:#e78f8e;
+    background-color: #896978;
+}
+.bar-catego{
+    background-color: #FFD4CA;
+    color:#44363d;
+}
+    
+
+.yummy{
+    max-width: 80%;
+    height: auto;
+}
+
+.search{
+    background-image: linear-gradient(to bottom, rgba(70, 70, 70, 0.4), rgba(53, 53, 53, 0.571)), url(/img/fondos/fondosearch.jpg);
+    height: 30rem;
+    background-size: cover;
+    background-position: top center;
+    color: floralwhite;
+    font-size:20px;
+}
+.body{
+    min-height:100vh;
+}
+.color1{
+    background-color: #AAC0AF;
+}
+.color2{
+    background-color: #839791;
+}
+.color3{
+    background-color: #44363d;
+}
+.color4{
+    background-color: #FFD4CA;
+}
+.portfolio{
+    padding:6%;
+    text-align:center;
+}
+.heading{
+    background: #fff;
+    padding: 1%;
+    text-align: left;
+    box-shadow: 0px 0px 4px 0px #545b62;
+}
+.heading img{
+    width: 10%;
+}
+.bio-info{
+    padding: 5%;
+    background:#fff;
+    box-shadow: 0px 0px 4px 0px #b0b3b7;
+}
+.name{
+    font-family: 'Charmonman', cursive;
+    font-weight:600;
+}
+.bio-image{
+    text-align:center;
+}
+.bio-image img{
+    border-radius:50%;
+}
+.bio-content{
+    text-align:left;
+}
+.bio-content p{
+    font-weight:600;
+    font-size:30px;
+}
+.img{
+    width: 380px;
+    height: 280px;
+}
