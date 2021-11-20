@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="heading">
                 <button type="button" class="btn color4 rounded-circle" data-mdb-ripple-color="dark">
-                    <!-- <i class="fas fa-star"></i> -->
+                    <i class="fas fa-eye"></i> 
                 </button>
                 <button type="button" class="btn color3 rounded-circle">
                     <!-- <i class="fas fa-star"></i> -->

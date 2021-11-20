@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse d-flex justify-content-end">
                 <ul class="navbar-nav ">
                     <li class="nav-item active">
-                        <a class="nav-link" href="">Mis recetas
+                        <a class="nav-link" href="{{route('users.myrecipes',Auth::User()->id)}}">Mis recetas
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>

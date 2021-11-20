@@ -130,8 +130,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //
+    }
+    public function myrecipes(User $user){
+        $recipes = Recipe::where('user_id',$user->id)->get();//me devuelve todas las recetas de ese usuario
+        $categories = Category::orderBy('id')->limit('10')->get();
+        //$recipe_catego = Recipe::where('category_id',$category_id)->paginate(3);
+        $array_variables = ['categories'=>$categories,'user'=>$user,'recipes'=>$recipes];
+        return view('users.myrecipes',$array_variables);
     }
 }

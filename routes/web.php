@@ -24,6 +24,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('users/{user}/myrecipes',[UserController::class,'myrecipes'])->name('users.myrecipes');
 //Redirige las vistas de user
 Route::resource('users', UserController::class);
 
