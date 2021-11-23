@@ -2,11 +2,14 @@
 @section('body')
 @if(count($recipes) == 0)
 <!-- Si no tiene recetas, muestra el aviso -->
-<div class="bg-light p-5 rounded">
-    <h1 class="transparenciaError"><strong>¡Vaya,{{$user->name}}!.No tenemos ninguna receta en .</strong></h1>
-    <br>
-    <img src="{{asset('/img/errors/oh oh.png')}}" alt="" style="width: 256px; height:256px;">
+<div class="container">
+    <div class="p-5 rounded">
+        <h1 class="transparenciaError"><strong>¡Vaya,{{$user->name}}!.No has publicado ninguna receta aun.</strong></h1>
+        <br>
+        <img src="{{asset('/img/errors/oh oh.png')}}" alt="" style="width: 256px; height:256px;">
+    </div>
 </div>
+
 @else
 
 <!-- Carousel wrapper -->
@@ -30,110 +33,28 @@
         <div class="carousel-item active">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <!-- card1 -->
+                    @foreach($recipes as $recipe)
+                    <div class="col-lg-4 mt-3">
                         <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
-                                <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+                            <img src="{{$recipe->pic_recipes == null ? asset('img/food/burrito.jpg') : asset('img/food/'.$recipe->pic_recipes)}}" class="card-img-top" alt="..." />
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
+                                <h5 class="card-title">{{$recipe->title}}</h5>
+                                <p class="card-text">{{substr(($recipe->preparation),0,50)}}</p>
                                 <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
                                 <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
-                                <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
         </div>
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
-                                <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
-                                <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn color4 rounded-circle"><i class="fas fa-eye"></i></a>
-                                <a href="#!" class="btn color3 icon rounded-circle"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#!" class="btn color2 rounded-circle"><i class="fas fa-magic"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
     <!-- Inner -->
     @endif

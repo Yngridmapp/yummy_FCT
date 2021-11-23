@@ -44,7 +44,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -136,7 +136,7 @@ class UserController extends Controller
         //
     }
     public function myrecipes(User $user){
-        $recipes = Recipe::where('user_id',$user->id)->get();//me devuelve todas las recetas de ese usuario
+        $recipes = Recipe::where('user_id',$user->id)->orderByDesc('created_at')->get();//me devuelve todas las recetas de ese usuario
         $categories = Category::orderBy('id')->limit('10')->get();
         //$recipe_catego = Recipe::where('category_id',$category_id)->paginate(3);
         $array_variables = ['categories'=>$categories,'user'=>$user,'recipes'=>$recipes];

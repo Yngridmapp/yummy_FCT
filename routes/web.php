@@ -4,6 +4,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -27,6 +28,6 @@ Auth::routes();
 Route::get('users/{user}/myrecipes',[UserController::class,'myrecipes'])->name('users.myrecipes');
 //Redirige las vistas de user
 Route::resource('users', UserController::class);
-
+Route::resource('recipes', RecipeController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/filtrado/{category}',[CategoryController::class,'categories'])->name('category.index');
