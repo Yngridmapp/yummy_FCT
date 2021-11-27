@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="heading">
-                <a href="{{route('users.show', Auth::User()->id)}}" class="btn color4 rounded-circle">
+                <a href="{{route('users.edit', Auth::User()->id)}}" class="btn color4 rounded-circle">
                 <i class="fas fa-eye"></i> 
                 </a>
                 <button type="button" class="btn color3 rounded-circle">
@@ -22,7 +22,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="bio-image">
-                            <img class="img" src="{{$user->selfie}}" alt="image" />
+                           
+                            
+                            <img class="img" src="{{$user->selfie == null ? asset('img/perfiles/noFoto.jpg') : asset('img/perfiles/'.$user->selfie)}}" alt="image" />
                         </div>
                     </div>
                 </div>
@@ -31,7 +33,7 @@
                 <div class="bio-content">
                     <h1>Hi there, I'm {{$user->name}} {{$user->last_name}}</h1>
                     <h6>{{$user->description}}</h6>
-                    <p>P.S I have no special talent, I'm just passionately curious ;)</p>
+                    <h6>P.S I have no special talent, I'm just passionately curious ;)</h6>
                 </div>
             </div>
         </div>

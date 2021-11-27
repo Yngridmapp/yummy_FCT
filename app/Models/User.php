@@ -22,8 +22,8 @@ class User extends Authenticatable
         'last_name',
         'email',
         'description',
-        'selfie',
         'password',
+        'rol_id',
         'created_at',
         'updated_at'
     ];
@@ -50,8 +50,5 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Rol::class);
     }
-    public function vote()
-    {
-        return $this->hasMany(Vote::class);
-    }
+    
 }

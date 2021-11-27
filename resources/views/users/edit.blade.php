@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="bio-image">
-                            <img class="img" src="{{$user->selfie}}" alt="image" />
+                            <img class="img" src="{{$user->selfie == null ? asset('img/perfiles/noFoto.jpg') : asset('img/perfiles/'.$user->selfie)}}" alt="image" width="100" height="100"/>
                         </div>
                     </div>
                 </div>

@@ -10115,6 +10115,19 @@ h3 {
 }
 
 .img {
-  width: 380px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.oblique {
+  font-style: oblique;
+}
+
+.form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
 }

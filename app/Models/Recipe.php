@@ -18,8 +18,5 @@ class Recipe extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    public function vote()
-    {
-        return $this->belongsToMany(Vote::class);
-    }
+   
 }

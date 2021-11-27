@@ -16,10 +16,10 @@ class UserSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $datos_usuario = ['usuario1' => ['Julia','Ruiz','mail1@mail.com','/img/perfiles/selfie1.png'],
-                        'usuario2' => ['Jorge','Barbosa','mail2@mail.com','/img/perfiles/selfie3.jpg'],
-                        'usuario3' => ['Yngrid','Martinez','madmad@gmail.com','/img/perfiles/selfie4.jpg'],
-                        'usuario4' => ['Daniel','Pose','mail3@mail.com','/img/perfiles/selfie2.jpg']];
+        $datos_usuario = ['usuario1' => ['Julia','Ruiz','mail1@mail.com','selfie1.png'],
+                        'usuario2' => ['Jorge','Barbosa','mail2@mail.com','selfie3.jpg'],
+                        'usuario3' => ['Yngrid','Martinez','madmad@gmail.com','selfie4.jpg'],
+                        'usuario4' => ['Daniel','Pose','mail3@mail.com','selfie2.jpg']];
         foreach($datos_usuario as $dato => $valor){
             DB::table('users')->insert([
                 'name' => $valor[0],

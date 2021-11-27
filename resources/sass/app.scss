@@ -88,6 +88,15 @@
     font-size:30px;
 }
 .img{
-    width: 380px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
+    max-width: 350px; 
+    max-height: 350px;
+}
+.oblique {
+    font-style: oblique;
+  }
+.form{
+    width: fit-content;
+    margin: 0;
 }

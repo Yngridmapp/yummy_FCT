@@ -18,7 +18,6 @@ class CreateRecipesTable extends Migration
             $table->string("title", 100);
             $table->text("ingredient", 500);
             $table->text("preparation", 500);
-            $table->integer("votes")->default(0);
             $table->string("pic_recipes")->nullable();
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onUpdate('cascade')->onDelete('cascade');

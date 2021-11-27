@@ -76,9 +76,21 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                    @if(Auth::user()->rol_id == 1)
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('users.index',Auth::User()->id)}}">Listado usuarios
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            @if(Auth::user()->rol_id == 1)
+                            {{ roleName(Auth::user())}}
+                            @else
+                            {{Auth::user()->name}}
+                            @endif
+
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

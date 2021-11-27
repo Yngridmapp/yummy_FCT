@@ -12,17 +12,25 @@ use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('rol.administrador')->only('index');
+        // $this->middleware('auth')->only('create');
+        // $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
-     *
+     *->middleware('rol.administrador')->only('index')
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
         $categories = Category::orderBy('id')->limit('10')->get();
+        $user = User::paginate(10);
         //$recipe_catego = Recipe::where('category_id',$category_id)->paginate(3);
-        $array_variables = ['categories'=>$categories];
+        $array_variables = ['categories'=>$categories,'users'=>$user];
         return view('users.index',$array_variables);
     }
 
@@ -88,15 +96,19 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request,User $user)
     {
         
-        
+        //dd($request->all());
         $comprobacion = $request->all();
         $user->fill($comprobacion);
-        //dd($comprobacion);
+        //dd($user);
+
         $user->save();
         if ($request->selfie) {
             $this::pic($request, $user);
         }
-        return back()->with('estado', 'Datos actualizados correctamente.');
+        $categories = Category::orderBy('id')->limit('10')->get();
+        $array_variables = ['categories'=>$categories,'user'=>$user];
+        return view('users.show',$array_variables);
+        
      }
     public static function pic(Request $request, User $user)
     {
@@ -131,12 +143,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
+        $user->delete();
+        return redirect(route('users.index'));
     }
     public function myrecipes(User $user){
-        $recipes = Recipe::where('user_id',$user->id)->orderByDesc('created_at')->get();//me devuelve todas las recetas de ese usuario
+        $recipes = Recipe::where('user_id',$user->id)->orderByDesc('created_at')->paginate(9);//me devuelve todas las recetas de ese usuario
         $categories = Category::orderBy('id')->limit('10')->get();
         //$recipe_catego = Recipe::where('category_id',$category_id)->paginate(3);
         $array_variables = ['categories'=>$categories,'user'=>$user,'recipes'=>$recipes];

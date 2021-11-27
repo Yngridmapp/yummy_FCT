@@ -90,7 +90,7 @@ class CategoryController extends Controller
     {
         //
       
-        $recipe_catego = Recipe::where('category_id',$category_id)->paginate(3);
+        $recipe_catego = Recipe::where('category_id',$category_id)->paginate(9);
         $categories = Category::orderBy('id')->limit('10')->get();
         $array_variables = [ "recipes" => $recipe_catego,'categories'=>$categories];
         return view('recipes.index',$array_variables);

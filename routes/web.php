@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\CategoryController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +33,5 @@ Route::resource('users', UserController::class);
 Route::resource('recipes', RecipeController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/filtrado/{category}',[CategoryController::class,'categories'])->name('category.index');
+Route::get('/search',[RecipeController::class,'search'])->name('searchs.show');
+
