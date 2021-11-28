@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="heading">
-                <a href="" class="btn color4 rounded-circle">
+                <a  class="btn color4 rounded-circle">
 
                 </a>
-                <a href="" class="btn color3 rounded-circle">
+                <a  class="btn color3 rounded-circle">
 
                 </a>
-                <a href="" class="btn color2 rounded-circle">
+                <a  class="btn color2 rounded-circle">
 
                 </a>
             </div>
@@ -19,11 +19,9 @@
     </div>
     <div class="bio-info">
         <div class="row">
-            <div class="col-md-6">
-                <div class="row">
                     <div class="col-md-12">
                         <table class="table">
-                            <thead class="bg-topbar text-light text-center" style="background-color:#ff5050;">
+                            <thead class="bg-topbar text-light text-center color2">
                                 <tr>
                                     <th scole="col">Usuario</th>
                                     <th scole="col">E-mail</th>
@@ -53,8 +51,6 @@
                         {{$users->links()}}
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
 </div>
 

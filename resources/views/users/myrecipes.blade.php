@@ -25,7 +25,7 @@
                     <div class="col-lg-4 mt-3">
                         <div class="card">
                             <!-- Si la receta no tiene imagen, aparecerá con una por defecto -->
-                            <img src="{{$recipe->pic_recipes == null ? asset('img/food/burrito.jpg') : asset('img/food/'.$recipe->pic_recipes)}}" class="card-img-top img" alt="..." />
+                            <img src="{{$recipe->pic_recipes == null ? asset('img/food/default.jpg') : asset('img/food/'.$recipe->pic_recipes)}}" class="card-img-top img" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">{{$recipe->title}}</h5>
 

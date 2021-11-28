@@ -15,7 +15,7 @@
 </head>
 <!-- BARRA ACCESO -->
 
-<body class="body">
+<body class="Site">
 
     <nav class="navbar navbar-expand-sm navbar-dark flex-row  text-left bg-red">
         <!-- Permito acceso al usurio -->
@@ -62,7 +62,7 @@
                         </div>
                     </li> -->
                 <div class="dropdown">
-                    <button class="btn bg-red dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn bg-red dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Mis recetas
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -130,19 +130,16 @@
     </nav>
     @endunless
     <!-- BUSCADOR Y CARRUSELL -->
+    <main class="Site-content">
     @yield('body')
+    </main>
+    
 
-    <!-- <footer class="footer py-3 bg-red">
-        <div class="container">
-            <span class="text-light">Place sticky footer content here.</span>
-        </div>
-    </footer> -->
-
-    <footer class="text-center text-white footer" style="background-color: #f1f1f1;">
+    <footer class="text-center text-white " style="background-color: #f1f1f1;">
         <!-- Grid container -->
-        <div class="container pt-4">
+        <div class="container pt-2">
             <!-- Section: Social media -->
-            <section class="mb-4">
+            <section class="mb-2">
                 <!-- Facebook -->
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
@@ -166,15 +163,15 @@
 
         <!-- Copyright -->
         <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2021 Copyright:
+            <a class="text-dark" href="#">Yummy.com</a>
         </div>
         <!-- Copyright -->
     </footer>
 
     @yield('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 

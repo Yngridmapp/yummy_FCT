@@ -45,13 +45,15 @@
 .color4{
     background-color: #FFD4CA;
 }
+.textColor3{
+    color:#839791;
+    ;
+}
 .icon{
     //color: #EFD5C3;
     color: floralwhite;
 }
-.footer{
-    margin-top: 266px;
-}
+
 .portfolio{
     padding:6%;
     text-align:center;
@@ -85,7 +87,7 @@
 }
 .bio-content p{
     font-weight:600;
-    font-size:30px;
+    font-size:15px;
 }
 .img{
     width: 300px;
@@ -100,3 +102,24 @@
     width: fit-content;
     margin: 0;
 }
+.foot{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+}
+.btn:focus{
+    outline: 0 !important;
+    box-shadow: none;
+}
+.size{
+    font-size: 35px;
+}
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }

@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="bio-content">
                     <h1>Hi there, I'm {{$user->name}} {{$user->last_name}}</h1>
-                    <h6>{{$user->description}}</h6>
+                    <p>{{$user->description}}</p>
                     <h6>P.S I have no special talent, I'm just passionately curious ;)</h6>
                 </div>
             </div>

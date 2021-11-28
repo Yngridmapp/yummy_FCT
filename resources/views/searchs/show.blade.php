@@ -18,7 +18,7 @@
                             <!--
                             <i class="fas fa-heart"></i> relleno
                               <i class="far fa-heart"></i>-->
-                            <img src="{{$rec->pic_recipes == null ? asset('img/food/burrito.jpg') : asset('img/food/'.$rec->pic_recipes)}}" class="card-img-top" alt="..." />
+                            <img src="{{$rec->pic_recipes == null ? asset('img/food/default.jpg') : asset('img/food/'.$rec->pic_recipes)}}" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">{{$rec->title}}</h5>
 

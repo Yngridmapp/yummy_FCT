@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\CategoryController;
-
-
+use App\Models\Recipe;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +20,11 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', function () {
+    $recipes = Recipe::orderByDesc('created_at')->limit('9')->paginate('3');
     $categories = Category::orderBy('id')->limit('10')->get();
     // dd($categories);
-    return view('portada.welcome')->with('categories',$categories);
+    $array_variables = ['categories'=>$categories,'recipes'=>$recipes];
+    return view('portada.welcome',$array_variables);
 });
 
 Auth::routes();
