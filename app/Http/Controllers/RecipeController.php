@@ -17,6 +17,8 @@ class RecipeController extends Controller
     public function __construct()
     {
         $this->authorizeResource(Recipe::class);
+        //Especificamos a qué vistas puede acceder el usuario NO registrado
+        $this->middleware('auth')->except(['index','show','search']);
     }
     /**
      * Display a listing of the resource.

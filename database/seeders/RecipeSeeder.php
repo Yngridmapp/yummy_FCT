@@ -17,13 +17,15 @@ class RecipeSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        DB::table('recipes')->insert([
-            'title' => $faker->sentence(1),
-            'category_id' => Category::inRandomOrder()->limit(1)->get()->First()->id,
-            'ingredient' => $faker->text(100),
-            'preparation' => $faker->text(500),
-            'created_at' => $faker->dateTimeThisMonth(),
-            'user_id' => User::inRandomOrder()->limit(1)->get()->First()->id,
-        ]);
+        for ($i = 0; $i <= 50; $i++) {
+            DB::table('recipes')->insert([
+                'title' => $faker->sentence(1),
+                'category_id' => Category::inRandomOrder()->limit(1)->get()->First()->id,
+                'ingredient' => $faker->text(100),
+                'preparation' => $faker->text(500),
+                'created_at' => $faker->dateTimeThisMonth(),
+                'user_id' => User::inRandomOrder()->limit(1)->get()->First()->id,
+            ]);
+        }
     }
 }

@@ -16,7 +16,7 @@ class RecipePolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(?User $user)
     {
         //
         return true;
@@ -29,7 +29,7 @@ class RecipePolicy
      * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Recipe $recipe)
+    public function view(?User $user, ?Recipe $recipe)
     {
         //
         return true;
@@ -41,7 +41,7 @@ class RecipePolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(?User $user)
     {
         //
         return true;

@@ -20,7 +20,7 @@ use App\Models\Recipe;
 */
 
 Route::get('/', function () {
-    $recipes = Recipe::orderByDesc('created_at')->limit('9')->paginate('3');
+    $recipes = Recipe::orderByDesc('created_at')->limit('12')->get();
     $categories = Category::orderBy('id')->limit('10')->get();
     // dd($categories);
     $array_variables = ['categories'=>$categories,'recipes'=>$recipes];

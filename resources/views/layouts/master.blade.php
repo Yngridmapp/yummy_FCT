@@ -46,21 +46,6 @@
             @auth
             <div class="collapse navbar-collapse d-flex justify-content-end">
 
-                <!-- <li class="nav-item active dropdown">
-                        <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Mis recetas
-                             <span class="sr-only">(current)</span> 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item color2" href="">Crear</a>
-
-
-                        </div>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item color2" href="">Ver</a>
-
-
-                        </div>
-                    </li> -->
                 <div class="dropdown">
                     <button class="btn bg-red dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Mis recetas
@@ -113,7 +98,7 @@
     </nav>
     <!-- BARRA CATEGORIAS -->
     @unless(Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register')
-    <nav class="navbar navbar-expand-sm navbar-light flex-row  text-left bar-catego">
+    <nav class="navbar navbar-expand-sm navbar-light flex-row  text-left bar-catego font-weight-bold">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categories" aria-controls="categories" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -135,7 +120,7 @@
     </main>
     
 
-    <footer class="text-center text-white " style="background-color: #f1f1f1;">
+    <footer class="text-center text-white color4" >
         <!-- Grid container -->
         <div class="container pt-2">
             <!-- Section: Social media -->
@@ -162,9 +147,9 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center text-white p-3 bg-red" >
             © 2021 Copyright:
-            <a class="text-dark" href="#">Yummy.com</a>
+            <a class="text-white" href="#">Yummy.com</a>
         </div>
         <!-- Copyright -->
     </footer>

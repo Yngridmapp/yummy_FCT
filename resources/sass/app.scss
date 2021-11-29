@@ -32,6 +32,7 @@
 }
 .body{
     min-height:100vh;
+    
 }
 .color1{
     background-color: #AAC0AF;
@@ -122,4 +123,10 @@
   
   .Site-content {
     flex: 1;
+  }
+
+
+  body{
+      //FB8B24 #d3ccd0
+    background-color: #f5f5f5 !important;
   }
